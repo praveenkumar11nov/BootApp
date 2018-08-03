@@ -17,7 +17,7 @@ public class LoginController {
 	@RequestMapping(value="/", method ={RequestMethod.POST,RequestMethod.GET})
 	public String getLoginPage() {
 		System.out.println("inside getLoginPage......");
-		return "login.jsp";
+		return "login";
 	}
 	
 	@RequestMapping(value="/home", method ={RequestMethod.POST,RequestMethod.GET})
@@ -42,12 +42,12 @@ public class LoginController {
 		
 		if(user.equalsIgnoreCase(USR.getName())) {
 			if(pwd.equalsIgnoreCase(USR.getPwd())) {
-				return "home.jsp";
+				return "home";
 			}else {
-				return "login.jsp";
+				return "login";
 			}
 		}else {
-			return "login.jsp";
+			return "login";
 		}
 		
 	}
