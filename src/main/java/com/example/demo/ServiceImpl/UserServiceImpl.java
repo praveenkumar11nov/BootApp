@@ -21,6 +21,8 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
+	
+	
 
 	@Override
 	public Users findById(int id) {
@@ -42,10 +44,11 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<?> getUserFromDB(String user, String pwd) {
-		EntityManager em = entityManagerFactory.createEntityManager();
+		
 		
 		try {
-			List<?> list= em.createNativeQuery("SELECT * FROM USERS WHERE NAME='"+user+"' AND PASSWORD='"+pwd+"'").getResultList();
+			EntityManager entityManager = entityManagerFactory.createEntityManager();
+			List<?> list= entityManager.createNativeQuery("SELECT * FROM praveen.USERS WHERE NAME='"+user+"' AND PASSWORD='"+pwd+"'").getResultList();
 			for (Iterator iterator = list.iterator(); iterator.hasNext();) {
 				Object[] object = (Object[]) iterator.next();
 				

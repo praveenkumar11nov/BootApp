@@ -10,7 +10,7 @@ public interface UserRepository extends CrudRepository<Users, Integer> {
 	
 	Users findById(int id);
 	
-	@Query(value="SELECT * FROM USERS WHERE NAME='praveen' AND PASSWORD='123'", nativeQuery = true)
+	@Query(value="SELECT * FROM praveen.USERS WHERE NAME='praveen' AND PASSWORD='123'", nativeQuery = true)
 	Users findByNameAndPassword(String name,String pwd);
 	
 	/*
