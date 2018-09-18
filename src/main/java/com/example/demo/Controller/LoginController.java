@@ -14,7 +14,7 @@ public class LoginController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value="/", method ={RequestMethod.POST,RequestMethod.GET})
+	@RequestMapping(value= {"/","/login"}, method ={RequestMethod.POST,RequestMethod.GET})
 	public String getLoginPage() {
 		System.out.println("inside getLoginPage......");
 		return "login";
@@ -26,7 +26,7 @@ public class LoginController {
 		String user=request.getParameter("username");
 		String pwd=request.getParameter("password");
 		System.err.println("username="+user+" password="+pwd);
-		
+		/*
 		Users USR=null;
 		try {
 			USR = userService.findById(1);
@@ -48,7 +48,9 @@ public class LoginController {
 			}
 		}else {
 			return "login";
-		}
+		}*/
+		
+		return "home";
 		
 	}
 
