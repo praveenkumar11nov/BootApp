@@ -1,7 +1,10 @@
 package com.example.demo.Controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,37 +24,40 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/home", method ={RequestMethod.POST,RequestMethod.GET})
-	public String getHomePage(HttpServletRequest request) {
+	public String getHomePage(Authentication authentication,HttpServletRequest request) {
 		System.out.println("inside getHomePage......");
-		String user=request.getParameter("username");
-		String pwd=request.getParameter("password");
-		System.err.println("username="+user+" password="+pwd);
-		/*
-		Users USR=null;
-		try {
-			USR = userService.findById(1);
-			System.out.println("DbUserName==========>"+USR.getName());
-			System.out.println("DbPassWord==========>"+USR.getPwd());
-			
-			userService.findByNameAndPassword(user,pwd);
-			userService.getUserFromDB(user, pwd);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		String user=authentication.getName();
+		System.err.println("USERNAME ======== "+user);
 		
-		if(user.equalsIgnoreCase(USR.getName())) {
-			if(pwd.equalsIgnoreCase(USR.getPwd())) {
-				return "home";
-			}else {
-				return "login";
-			}
-		}else {
-			return "login";
-		}*/
+		HttpSession session = request.getSession(false);
+		session.setAttribute("username",user.toUpperCase());
 		
 		return "home";
-		
 	}
-
+	
+	public void readmethod(){
+		/*
+			Users USR=null;
+			try {
+				USR = userService.findById(1);
+				System.out.println("DbUserName==========>"+USR.getName());
+				System.out.println("DbPassWord==========>"+USR.getPwd());
+				
+				userService.findByNameAndPassword(user,pwd);
+				userService.getUserFromDB(user, pwd);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			if(user.equalsIgnoreCase(USR.getName())) {
+				if(pwd.equalsIgnoreCase(USR.getPwd())) {
+					return "home";
+				}else {
+					return "login";
+				}
+			}else {
+				return "login";
+			}*/
+	}
 }
