@@ -4,6 +4,7 @@ package com.example.demo.security;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -20,9 +22,15 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+//@Configuration
+//@EnableWebSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled=true)
+
+
 @Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled=true)
+@Order(SecurityProperties.BASIC_AUTH_ORDER)
+@EnableGlobalAuthentication
+@EnableGlobalMethodSecurity(securedEnabled = true)
 public class MultiHttpSecurityConfig {
 	
     @Autowired
@@ -38,17 +46,19 @@ public class MultiHttpSecurityConfig {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-
-		auth.inMemoryAuthentication().withUser("praveen").password("praveen").roles("USER");
-		auth.inMemoryAuthentication().withUser("kumar").password("kumar").roles("USER","ADMIN");
-		auth.inMemoryAuthentication().withUser("appuser").password("appuser").roles("ADMIN");
-
-/*		auth.jdbcAuthentication().dataSource(datasource)
+		
+		auth.inMemoryAuthentication().withUser("praveen").password("123").roles("USER");
+		auth.inMemoryAuthentication().withUser("kumar").password("123").roles("USER");
+		auth.inMemoryAuthentication().withUser("appuser").password("123").roles("ADMIN");
+		/*
+		auth.jdbcAuthentication().dataSource(datasource)
 		.usersByUsernameQuery("select username,password, enabled from USERS where username=?")
-		.authoritiesByUsernameQuery("select USERNAME,ROLE from USER_ROLES where username=?");		*/
+		.authoritiesByUsernameQuery("select USERNAME,ROLE from USER_ROLES where username=?");
+		*/
 	}
 	
 	@Configuration
+	@Order(2)
 	public static class APIConfiguration extends WebSecurityConfigurerAdapter {
 		private static String REALM="MY_TEST_REALM";
 		@Override

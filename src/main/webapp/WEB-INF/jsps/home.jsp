@@ -9,6 +9,11 @@
 <body>
 
 Hello ! This is home page.
+<br>
+<a href="./app/dashboard">DashBoard</a>
+<br>
+<a href="./app/index">Index</a>
+<br>
 
 </body>
 </html>

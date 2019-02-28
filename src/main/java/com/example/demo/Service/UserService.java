@@ -9,4 +9,6 @@ public interface UserService {
 	Users findById(int id);
 	Users findByNameAndPassword(String user,String pwd);
 	List<?> getUserFromDB(String user,String pwd);
+	
+	void save(Users users);
 }

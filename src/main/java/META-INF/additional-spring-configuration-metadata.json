@@ -1,0 +1,47 @@
+{"properties": [
+  {
+    "name": "spring.datasource2.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource2.driver-class-name'"
+  },
+  {
+    "name": "spring.datasource2.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource2.password'"
+  },
+  {
+    "name": "spring.datasource2.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource2.username'"
+  },
+  {
+    "name": "spring.datasource2.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource2.url'"
+  },
+  {
+    "name": "spring.datasource.driver.class",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.driver.class'"
+  },
+  {
+    "name": "spring.mysql.datasource.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mysql.datasource.url'"
+  },
+  {
+    "name": "spring.mysql.datasource.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mysql.datasource.username'"
+  },
+  {
+    "name": "spring.mysql.datasource.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mysql.datasource.password'"
+  },
+  {
+    "name": "spring.mysql.datasource.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mysql.datasource.driver-class-name'"
+  }
+]}

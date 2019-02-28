@@ -21,8 +21,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	DataSource dataSource;
 	
-	private static String REALM="MY_TEST_REALM";
-	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		System.out.println("spring securtiy configuration_____________________________");
@@ -35,12 +33,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		/*auth.inMemoryAuthentication().withUser("praveen").password("praveen").roles("USER");
-		auth.inMemoryAuthentication().withUser("kumar").password("kumar").roles("USER");
-		auth.inMemoryAuthentication().withUser("appuser").password("appuser").roles("ADMIN");*/
+		/*
+		auth.inMemoryAuthentication().withUser("praveen").password("123").roles("USER");
+		auth.inMemoryAuthentication().withUser("kumar").password("123").roles("USER");
+		auth.inMemoryAuthentication().withUser("appuser").password("123").roles("ADMIN");
+		*/
+		
 		auth.jdbcAuthentication().dataSource(dataSource)
-		.usersByUsernameQuery("select username,password, enabled from USERS where username=?")
-		.authoritiesByUsernameQuery("select USERNAME,ROLE from USER_ROLES where username=?");
+		.usersByUsernameQuery("SELECT USERNAME,PASSWORD,ENABLED FROM USERS WHERE USERNAME=?")
+		.authoritiesByUsernameQuery("SELECT USERNAME,ROLE FROM USER_ROLES WHERE USERNAME=?");	
 	}
 	
 	@Bean
