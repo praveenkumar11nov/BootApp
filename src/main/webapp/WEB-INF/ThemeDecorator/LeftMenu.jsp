@@ -4,7 +4,16 @@
 	max-height: 652px;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	overflow-y: -moz-hidden-unscrollable;
+ 	overflow-y: -moz-hidden-unscrollable; 
+ 	
+ /* 	
+ 	max-height: calc(100vh - 9rem);
+	overflow-y: auto;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-right: -15px;
+	margin-left: -15px;
+ */
 }
 </style>
 
@@ -28,6 +37,12 @@
         <a class="nav-link" href="./index">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="./paygroup">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Payments</span></a>
       </li>
 
       <!-- Divider -->

@@ -11,6 +11,7 @@ public class MySiteMeshFilter extends ConfigurableSiteMeshFilter{
 		.addDecoratorPath("/login","/WEB-INF/Decorator/LoginLayout.jsp")
 
 		.addDecoratorPath("/app/**","/WEB-INF/ThemeDecorator/PageLayout.jsp")
+		.addDecoratorPath("/app/paygrouppage","/WEB-INF/ThemeDecorator/PageLayoutWithoutHeaderAndLeftMenu.jsp")
 		//.addDecoratorPath("/app/decor1","/WEB-INF/ThemeDecorator/PageLayout.jsp")
 		//.addDecoratorPath("/app/decor2","/WEB-INF/jsps/ThemePages/JSP2.jsp")
 	    

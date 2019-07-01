@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.SampleCode;
 
 public class Singleton{ 
 	// static variable single_instance of type Singleton 

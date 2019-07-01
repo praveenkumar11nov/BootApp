@@ -33,15 +33,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		/*
+		
 		auth.inMemoryAuthentication().withUser("praveen").password("123").roles("USER");
 		auth.inMemoryAuthentication().withUser("kumar").password("123").roles("USER");
 		auth.inMemoryAuthentication().withUser("appuser").password("123").roles("ADMIN");
-		*/
 		
+	/*	
 		auth.jdbcAuthentication().dataSource(dataSource)
 		.usersByUsernameQuery("SELECT USERNAME,PASSWORD,ENABLED FROM USERS WHERE USERNAME=?")
-		.authoritiesByUsernameQuery("SELECT USERNAME,ROLE FROM USER_ROLES WHERE USERNAME=?");	
+		.authoritiesByUsernameQuery("SELECT USERNAME,ROLE FROM USER_ROLES WHERE USERNAME=?");	*/
 	}
 	
 	@Bean
