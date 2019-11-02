@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.demo.Model.PaymentGroups;
 import com.example.demo.Model.Payments;
 
-public interface PaymentService {
+public interface PaymentService extends GenericService<Payments>{
     Payments findById(int id);
 	List<?> getPayDetails(String grpname);
 	List<Payments> getPayments();

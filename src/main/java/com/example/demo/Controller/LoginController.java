@@ -1,5 +1,7 @@
 package com.example.demo.Controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -69,27 +71,14 @@ public class LoginController {
 	
 	public void readmethod(){
 		
-			Users USR=null;
 			try {
-				USR = userService.findById(1);
-				System.out.println("DbUserName==========>"+USR.getName());
-				System.out.println("DbPassWord==========>"+USR.getPwd());
-				
-				//userService.findByNameAndPassword(user,pwd);
-				//userService.getUserFromDB(user, pwd);
-				
-			} catch (Exception e) {
+				userService.findByIdTesingPostgresSqlDataSource(1);
+				userService.findByIdTesingMsqlDataSource(1);
+				userService.findByIdTesingOracleDataSource(43);
+			}
+			catch (Exception e) {
 				e.printStackTrace();
 			}
-	/*		
-			if(user.equalsIgnoreCase(USR.getName())) {
-				if(pwd.equalsIgnoreCase(USR.getPwd())) {
-					return "home";
-				}else {
-					return "login";
-				}
-			}else {
-				return "login";
-			}   */
+
 	}
 }

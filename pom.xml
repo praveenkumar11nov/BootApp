@@ -7,10 +7,9 @@
 	<groupId>com.example</groupId>
 	<artifactId>BootApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+ 	<packaging>jar</packaging>
 	<!-- <packaging>war</packaging> -->
-
-	<name>BootApp</name>
+ 	<name>BootApp</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -43,7 +42,13 @@
 		    <!-- Excluding Spring Boot Starter Tomcat -->
 		    
 		</dependency>
-
+		<!-- 
+	    <dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-tomcat</artifactId>
+	      <scope>provided</scope>
+	    </dependency>
+ -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -166,7 +171,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>ROOT</finalName>
+		<!-- <finalName>ROOT</finalName> -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

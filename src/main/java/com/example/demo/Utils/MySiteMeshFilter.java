@@ -6,6 +6,7 @@ import org.sitemesh.config.ConfigurableSiteMeshFilter;
 public class MySiteMeshFilter extends ConfigurableSiteMeshFilter{
 	@Override
 	protected void applyCustomConfiguration(SiteMeshFilterBuilder builder) {
+		System.err.println("inside sitemesh");
 		builder
 		.addDecoratorPath("/","/WEB-INF/Decorator/LoginLayout.jsp")
 		.addDecoratorPath("/login","/WEB-INF/Decorator/LoginLayout.jsp")

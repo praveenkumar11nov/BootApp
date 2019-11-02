@@ -37,7 +37,7 @@
 	    $.ajax({
 		    url: "./getAllPayments",
 		    success: function(result){
-			    alert("result = " + result);
+			    //alert("result = " + result);
 		    	if(result.length>0){
 		    		var htmls="";
 					for(var i=0;i<result.length;i++){

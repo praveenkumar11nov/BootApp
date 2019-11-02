@@ -4,11 +4,12 @@ import java.util.List;
 
 import com.example.demo.Model.Users;
 
-public interface UserService {
+public interface UserService extends GenericService<Users>{
 
-	Users findById(int id);
 	Users findByNameAndPassword(String user,String pwd);
 	List<?> getUserFromDB(String user,String pwd);
 	
-	void save(Users users);
+	void findByIdTesingPostgresSqlDataSource(int id);
+	void findByIdTesingMsqlDataSource(int id);
+	void findByIdTesingOracleDataSource(int id);
 }

@@ -60,7 +60,7 @@ public class MultiHttpSecurityConfig {
 	}
 	
 	@Configuration
-	@Order(1)
+	@Order(2)
 	public static class APIConfiguration extends WebSecurityConfigurerAdapter {
 		private static String REALM="MY_TEST_REALM";
 		@Override
@@ -75,7 +75,7 @@ public class MultiHttpSecurityConfig {
 	}
 	
 	@Configuration
-	@Order(2)
+	@Order(1)
 	public static class LoginPageConfiguration extends WebSecurityConfigurerAdapter {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
