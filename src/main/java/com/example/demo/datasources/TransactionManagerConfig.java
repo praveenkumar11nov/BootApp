@@ -10,10 +10,10 @@ public class TransactionManagerConfig {
 	@Bean(name = "chainedTransactionManager")
 	public ChainedTransactionManager transactionManager (
 			@Qualifier("pgsqlPlatformTransactionManager")PlatformTransactionManager pgsqlTransactionManager,
-			@Qualifier("db2PlatformTransactionManager")PlatformTransactionManager db2TransactionManager)
-	{
-	
-		return new ChainedTransactionManager(db2TransactionManager,pgsqlTransactionManager);
+			@Qualifier("mysqlPlatformTransactionManager")PlatformTransactionManager mysqlTransactionManager,
+			@Qualifier("odbaPlatformTransactionManager")PlatformTransactionManager odbaTransactionManager) {
+
+		return new ChainedTransactionManager(pgsqlTransactionManager,mysqlTransactionManager,odbaTransactionManager);
 	}
 	
 }

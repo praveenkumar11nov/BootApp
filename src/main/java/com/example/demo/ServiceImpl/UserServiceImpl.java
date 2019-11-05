@@ -49,7 +49,7 @@ public class UserServiceImpl extends GenericServiceImpl<Users> implements UserSe
 	@Override
 	public void findByIdTesingMsqlDataSource(int id) {
 		try {
-			Object[] user1 = (Object[]) getCustomEntityManager("db2").createNativeQuery("SELECT * FROM aws.users where id=" + id).getSingleResult();
+			Object[] user1 = (Object[]) getCustomEntityManager("mysql").createNativeQuery("SELECT * FROM aws.users where id=" + id).getSingleResult();
 			System.out.println("MySql DBname : aws ====" + user1[0] + "====" + user1[1] + "====" + user1[2] 
 					+ "====" + user1[3] + "====" + user1[4] + "====" + user1[5]);
 		}

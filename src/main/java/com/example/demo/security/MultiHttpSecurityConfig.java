@@ -52,11 +52,11 @@ public class MultiHttpSecurityConfig {
 		auth.inMemoryAuthentication().withUser("praveen").password("123").roles("USER");
 		auth.inMemoryAuthentication().withUser("kumar").password("123").roles("USER");
 		auth.inMemoryAuthentication().withUser("appuser").password("123").roles("ADMIN");
-		/*
-		auth.jdbcAuthentication().dataSource(datasource)
-		.usersByUsernameQuery("select username,password, enabled from USERS where username=?")
-		.authoritiesByUsernameQuery("select USERNAME,ROLE from USER_ROLES where username=?");
-		*/
+		
+//		auth.jdbcAuthentication().dataSource(datasource)
+//		.usersByUsernameQuery("select username,password, enabled from bootapp.USERS where username=?")
+//		.authoritiesByUsernameQuery("select USERNAME,ROLE from bootapp.USER_ROLES where username=?");
+		
 	}
 	
 	@Configuration

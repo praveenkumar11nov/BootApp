@@ -35,8 +35,8 @@ public abstract class GenericServiceImpl<T> implements GenericService<T> {
 	@PersistenceContext(unitName="pgsql")
 	protected EntityManager pgsql;
 
-	@PersistenceContext(unitName="db2")
-	protected EntityManager db2;
+	@PersistenceContext(unitName="mysql")
+	protected EntityManager mysql;
 
 	@PersistenceContext(unitName="odba")
 	protected EntityManager odba;
@@ -381,12 +381,12 @@ public abstract class GenericServiceImpl<T> implements GenericService<T> {
 	@Override
 	public EntityManager getCustomEntityManager(String schemaName) {
 		switch(schemaName){
-		case "pgsql": 
-			return pgsql;
-		case "odba": 
-			return odba;
-		case "db2": 
-			return db2;
+			case "pgsql": 
+				return pgsql;
+			case "odba": 
+				return odba;
+			case "mysql": 
+				return mysql;
 		}
 		return null; 
 	}
