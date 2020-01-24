@@ -43,5 +43,40 @@
     "name": "spring.mysql.datasource.driver-class-name",
     "type": "java.lang.String",
     "description": "A description for 'spring.mysql.datasource.driver-class-name'"
+  },
+  {
+    "name": "ldap.base.dn",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.base.dn'"
+  },
+  {
+    "name": "ldap.urls",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.urls'"
+  },
+  {
+    "name": "ldap.username",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.username'"
+  },
+  {
+    "name": "ldap.user.dn.pattern",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.user.dn.pattern'"
+  },
+  {
+    "name": "ldap.password",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.password'"
+  },
+  {
+    "name": "auth.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'auth.enabled'"
+  },
+  {
+    "name": "spring.oracle.datasource.driver.class",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.oracle.datasource.driver.class'"
   }
 ]}
